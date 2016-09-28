@@ -14,21 +14,15 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 function processCommand(command) {
-    var directCommands = [
-        'bold', 'italic', 'underline'
-    ];
+    var blockCommands = ['h1', 'h2', 'h3', 'p'];
+    var parameterCommands = ['createlink', 'insertimage'];
 
-    var blockCommands = [
-        'h1', 'h2', 'h3', 'h4'
-    ];
-
-    if(directCommands.indexOf(command) !== -1) {
+    if(parameterCommands.indexOf(command) !== -1) {
+        var assetAddress = prompt('Enter URL: ', 'http:\/\/');
+        document.execCommand(command, false, assetAddress);
+    } else if(blockCommands.indexOf(command) !== -1) {
+        document.execCommand('formatBlock', false, command);
+    } else {
         document.execCommand(command, false, null);
     }
-
-    if(blockCommands.indexOf(command) !== -1) {
-        document.execCommand(formatBlock, false, command);
-    }
-
-    //document.execCommand(command, false, null);
 }
