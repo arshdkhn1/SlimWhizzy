@@ -5,18 +5,18 @@
 }
 
 .toolbar-button {
-    color: #C5C;
+    color: #9999ff;
     text-decoration: none;
-    font-size: 10px;
-    border: 1px solid #C7C;
+    font-size: 12px;
+    border: 1px solid #9999ff;
     border-radius: 1px;
     padding: 5px;
     width: 1.5em;
     margin: .5px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: bold;
     display: inline-block;
-    box-shadow: 0px 1px 0px #C8C;
+    box-shadow: 0px 1px 0px #6977f6;
 }
 
 .editor {
@@ -26,4 +26,9 @@
     border: 1px;
     border-color: #000000;
     border-style: inset;
+}
+
+.form-group {
+    margin-top: 5px;
+    padding: 5px;
 }
