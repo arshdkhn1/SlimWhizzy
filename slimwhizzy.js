@@ -5,13 +5,16 @@
 // * License: MIT License
 // *******************************
 var buttons = document.getElementsByClassName("toolbar-button");
+
 for (var i = 0; i < buttons.length; i++) {
-    var command = buttons[i].getAttribute('data-command');
     buttons[i].addEventListener('click', function() {
+        var command = this.getAttribute('data-command');
         processCommand(command);
     }, false);
+
 }
 
 function processCommand(command) {
-    document.execCommand(command, false, null)
+    console.log(command);
+    document.execCommand(command, false, null);
 }

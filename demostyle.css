@@ -1,5 +1,7 @@
 .toolbar {
     text-align: center;
+    width: 50%;
+    margin: 0px auto;
 }
 
 .toolbar-button {
@@ -14,4 +16,13 @@
     margin-top: 10px;
     display: inline-block;
     box-shadow: 0px 1px 0px #C8C;
+}
+
+.editor {
+    width: 60%;
+    margin: 15px auto;
+    padding: 20px;
+    border: 1px;
+    border-color: #000000;
+    border-style: inset;
 }
