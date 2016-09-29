@@ -16,12 +16,16 @@ for (var i = 0; i < buttons.length; i++) {
 function processCommand(command) {
     var blockCommands = ['h1', 'h2', 'h3', 'p'];
     var parameterCommands = ['createlink', 'insertimage'];
+    var listCommands = ['insertorderedlist', 'insertUnorderedList'];
 
     if(parameterCommands.indexOf(command) !== -1) {
         var assetAddress = prompt('Enter URL: ', 'http:\/\/');
         document.execCommand(command, false, assetAddress);
     } else if(blockCommands.indexOf(command) !== -1) {
         document.execCommand('formatBlock', false, command);
+    } else if(listCommands.indexOf(command) !== -1) {
+        var listArray = ['item1', 'item 2'];
+        document.execCommand(command);
     } else {
         document.execCommand(command, false, null);
     }
