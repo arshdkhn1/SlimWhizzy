@@ -27,7 +27,7 @@ function processCommand(command) {
         var listArray = ['item1', 'item 2'];
         document.execCommand(command);
     } else if(command == "save"){
-        window.location.hash = window.btoa(document.querySelectorAll('div[contenteditable]')[0])
+        window.location.hash = window.btoa(document.querySelectorAll('div[contenteditable]')[0].innerHTML)
     }else{
         document.execCommand(command, false, null);
     }
