@@ -26,7 +26,9 @@ function processCommand(command) {
     } else if(listCommands.indexOf(command) !== -1) {
         var listArray = ['item1', 'item 2'];
         document.execCommand(command);
-    } else {
+    } else if(command == "save"){
+        window.location.hash = window.btoa(document.querySelectorAll('div[contenteditable]')[0])
+    }else{
         document.execCommand(command, false, null);
     }
 }
