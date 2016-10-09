@@ -5,7 +5,9 @@
 // * License: MIT License
 // *******************************
 var buttons = document.getElementsByClassName("toolbar-button");
-
+if(window.location.hash){
+    document.querySelectorAll('div[contenteditable]')[0].innerHTML = window.atob(window.location.hash.slice(1))
+}
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
         processCommand(this.getAttribute('data-command'));
@@ -26,7 +28,9 @@ function processCommand(command) {
     } else if(listCommands.indexOf(command) !== -1) {
         var listArray = ['item1', 'item 2'];
         document.execCommand(command);
-    } else {
+    } else if(command == "save"){
+        window.location.hash = window.btoa(document.querySelectorAll('div[contenteditable]')[0].innerHTML)
+    }else{
         document.execCommand(command, false, null);
     }
 }
