@@ -5,7 +5,9 @@
 // * License: MIT License
 // *******************************
 var buttons = document.getElementsByClassName("toolbar-button");
-
+if(window.location.hash){
+    document.querySelectorAll('div[contenteditable]')[0].innerHTML = window.atob(window.location.hash.slice(1))
+}
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
         processCommand(this.getAttribute('data-command'));
