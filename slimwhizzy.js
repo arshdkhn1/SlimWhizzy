@@ -5,8 +5,8 @@
 // * License: MIT License
 // *******************************
 var buttons = document.getElementsByClassName("toolbar-button");
-if(window.location.hash){
-    document.querySelectorAll('div[contenteditable]')[0].innerHTML = window.atob(window.location.hash.slice(1))
+if(window.location.search){
+    document.querySelectorAll('div[contenteditable]')[0].innerHTML = window.atob(window.location.search.slice(1))
 }
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
@@ -29,7 +29,7 @@ function processCommand(command) {
         var listArray = ['item1', 'item 2'];
         document.execCommand(command);
     } else if(command == "save"){
-        window.location.hash = window.btoa(document.querySelectorAll('div[contenteditable]')[0].innerHTML)
+        window.location.search = window.btoa(document.querySelectorAll('div[contenteditable]')[0].innerHTML);
     }else{
         document.execCommand(command, false, null);
     }
